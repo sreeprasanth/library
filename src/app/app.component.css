@@ -1,0 +1,10 @@
+.container{
+    background-color: aqua;
+}
+.bg{
+    width: 1350px;
+    height: 900px; 
+    background-size:cover;
+    background-repeat:no-repeat;
+background-image: url(https://www.detroitlabs.com/wp-content/uploads/2018/02/alfons-morales-YLSwjSy7stw-unsplash-1536x901.jpg);    
+}

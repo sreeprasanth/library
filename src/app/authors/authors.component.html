@@ -1,0 +1,46 @@
+
+<div class="card">
+    <div class="card-header">{{title}}</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+              <thead>
+                  <tr>
+                      <th>
+                          <button class="btn btn-primary"(click)='toggleImage()'>
+                            {{showImage?'Hide' : 'Show'}} Image</button>
+                          
+                         
+                      </th>
+                      <th>AUTHOR</th>
+                      <th>BOOK</th>
+                      <th>GENRE</th>
+                      <th>ABOUT AUTHOR</th>
+                      
+    
+                  </tr>
+              </thead>
+              <tbody>
+    <tr *ngFor='let book of books' >
+        <td><img *ngIf="showImage" [src]="book.bookUrl"
+    
+            [style.width.px]="imageWidth"
+            [style.height.px]="imageHeight"
+            [style.margin.px]="imageMargin">
+        </td>
+        <td>{{book.bookName}}</td>
+        <td>{{book.bookAuthor}}</td>
+            <td>{{book.bookGenre}}</td>
+            <td>{{book.bookDescription}}</td>
+            <td>
+                <button class="btn btn-warning" style="cursor:pointer"  (click)="readBook(book) " style="margin-left: 20px;"> READ</button>
+                <button class="btn btn-success" style="cursor:pointer" (click)="editBook(book)" *ngIf="_auth.loggedin()"  style="margin-left: 20px;"> Edit</button>         
+               <button class="btn btn-danger" style="cursor:pointer" (click)="deleteBook(book)" *ngIf="_auth.loggedin()" style="margin-left: 20px;"> Delete</button> 
+            </td> 
+    </tr>
+    
+              </tbody>
+            </table>
+          </div>
+    </div>
+    </div>
